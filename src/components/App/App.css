@@ -1,0 +1,20 @@
+h1, p {
+  font-family: Lato;
+}
+
+.input {
+  margin: 25px 25px 25px 5px;
+}
+
+.qrcodeContainer {
+  margin: 5px 25px 25px 0px;
+}
+.buttonContainer {
+  margin: 25px 25px 25px 0px;
+}
+
+.author {
+  position: fixed;
+  bottom: 0;
+}
+
