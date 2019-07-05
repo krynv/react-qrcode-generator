@@ -1,51 +1,55 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { QRCode } from 'react-qrcode-logo';
-import SaveButton from '../SaveButton/SaveButton';
+import ActionButtons from '../ActionButtons/ActionButtons';
+import { Shellbar } from 'fundamental-react';
+
+import sapLogo from 'fundamental-styles/dist/images/sap-logo.png';
+
 import './App.css';
 
-class App extends Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
+
+    this.inputStyle = {
+      width: '400px',
+      margin: '25px 25px 25px 25px'
+    }
+
+    this.qrCodeStyle = {
+      margin: '0px 25px 25px 25px'
+    }
+
+    this.buttonStyle = {
+      margin: '0px 25px 25px 25px'
+    }
 
     this.state = {
       inputValue: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
-    this.downloadQRCode = this.downloadQRCode.bind(this);
   };
 
   handleChange = (e) => {
     this.setState({ inputValue: e.target.value });
   }
 
-  downloadQRCode = () => {
-    let link = document.createElement('a');
-
-    link.download = `${this.state.inputValue}.qrcode.png`;
-    link.href = document.getElementsByTagName('canvas')[0].toDataURL();
-    link.click();
-  }
-
-
   render() {
     return (
       <div>
+        <Shellbar
+          logo={<img alt="SAP" src={sapLogo} />}
+          productTitle="QR Code Generator"
+        />
 
-        <input value={this.state.inputValue} onChange={this.handleChange} autoFocus type="text" className="input" />
-
-        <div className="qrcodeContainer">
-          <QRCode value={this.state.inputValue} size={300} id="canvas" />
+        <input value={this.state.inputValue} onChange={this.handleChange} autoFocus type="text" style={this.inputStyle} />
+        
+        <div style={this.qrCodeStyle}>
+          <QRCode value={this.state.inputValue} size={400} id="canvas" />
         </div>
 
-        <div className="buttonContainer">
-          <SaveButton />
-          <br />
-          <button onClick={this.downloadQRCode}>Download QR Code</button>
-        </div>
-
-        <p className="author"> Developed by <a href="http://github.com/krynv" rel="noopener noreferrer" target="_blank">Vitaliy Krynytskyy</a></p>
-
+        <ActionButtons inputValue={this.state.inputValue} />
       </div>
     );
   }
