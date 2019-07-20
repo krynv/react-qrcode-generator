@@ -1,6 +1,6 @@
 # react-qrcode-generator
 
-A very basic react web application which generates QR codes on the fly, featuring the latest SAP UI5 Styling.
+A very basic React web application which generates QR codes on the fly, featuring the latest SAP UI5 styling.
 
 Please note that this functionality only works on Google Chrome.
 
