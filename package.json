@@ -31,6 +31,6 @@
   "devDependencies": {
     "fundamental-react": "^0.7.1",
     "fundamental-styles": "^0.4.1",
-    "react-qrcode-logo": "^2.2.0"
+    "react-qrcode-logo": "^2.2.1"
   }
 }
