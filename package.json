@@ -29,7 +29,7 @@
     ]
   },
   "devDependencies": {
-    "fundamental-react": "^0.8.1",
+    "fundamental-react": "^0.11.0",
     "fundamental-styles": "^0.7.0",
     "react-qrcode-logo": "^2.2.1"
   }
